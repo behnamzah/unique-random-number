@@ -6,7 +6,7 @@ This example for generate random number with golang
 Clone the code into your local using the following command
 
 ```bash
-git clone https://github.com/behnamzah/uniqe-random-number.git
+git clone https://github.com/behnamzah/unique-random-number.git
 ```
 
 ## Running the Server 
