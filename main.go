@@ -3,17 +3,20 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"os"
+	"sort"
+	"strconv"
 	"time"
 )
 
 func main() {
 
 	rand.Seed(time.Now().UnixNano())
-	const max = 5
-	var us [max]int
+	max, _ := strconv.Atoi(os.Args[1])
+	var us []int
 
 loop:
-	for found := 0; found < max; {
+	for len(us) < max {
 		n := rand.Intn(max) + 1
 		fmt.Print(n, " ")
 
@@ -23,10 +26,11 @@ loop:
 			}
 		}
 
-		us[found] = n
-		found++
+		us = append(us, n)
 	}
 
-	fmt.Println("\n\n uniques :", us)
+	fmt.Println("\n uniques :", us)
+	sort.Ints(us)
+	fmt.Println("\n sorted  :", us)
 
 }
